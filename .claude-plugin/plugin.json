@@ -1,0 +1,18 @@
+{
+  "name": "professional-skills",
+  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, and technical content writing with runtime voice calibration.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Kaos599",
+    "url": "https://github.com/Kaos599"
+  },
+  "repository": "github:Kaos599/professional-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "anti-slop",
+    "claude-code",
+    "technical-writing",
+    "copywriting"
+  ]
+}

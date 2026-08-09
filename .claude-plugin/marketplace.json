@@ -1,0 +1,16 @@
+{
+  "name": "professional-skills",
+  "owner": {
+    "name": "Kaos599",
+    "url": "https://github.com/Kaos599"
+  },
+  "description": "Professional writing skills for AI coding agents: anti-slop editing and technical content writing.",
+  "plugins": [
+    {
+      "name": "professional-skills",
+      "source": "./",
+      "description": "Professional writing skills for AI coding agents: anti-slop editing and technical content writing.",
+      "license": "MIT"
+    }
+  ]
+}
