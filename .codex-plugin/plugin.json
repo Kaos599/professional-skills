@@ -1,0 +1,30 @@
+{
+  "name": "professional-skills",
+  "version": "1.0.0",
+  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, and technical content writing with runtime voice calibration.",
+  "author": {
+    "name": "Kaos599",
+    "url": "https://github.com/Kaos599"
+  },
+  "repository": "https://github.com/Kaos599/professional-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "anti-slop",
+    "technical-writing",
+    "copywriting"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Professional Skills",
+    "shortDescription": "Anti-slop editing and technical content writing skills",
+    "longDescription": "Two production-grade writing skills for AI coding agents: anti-slop-writing removes AI tells and restores human voice; technical-content-writer drafts checkable technical posts, threads, and docs in a derived voice.",
+    "developerName": "Kaos599",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Use Professional Skills to edit this draft so it sounds like a person wrote it.",
+      "Use Professional Skills to write a technical LinkedIn post about what I just shipped."
+    ]
+  }
+}

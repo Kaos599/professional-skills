@@ -1,0 +1,20 @@
+{
+  "name": "professional-skills",
+  "interface": {
+    "displayName": "Professional Skills"
+  },
+  "plugins": [
+    {
+      "name": "professional-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Kaos599/professional-skills.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
