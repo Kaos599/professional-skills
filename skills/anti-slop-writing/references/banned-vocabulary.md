@@ -44,9 +44,15 @@ Banned by a large share of the corpus. Almost never the clearest available word.
 | multifaceted | 8 | cut |
 | holistic | 8 | cut |
 | empower | 8 | let, allow |
-| supercharge, elevate, harness, ever-evolving, game-changer, beacon, meticulous | | cut |
+| supercharge · elevate · ever-evolving · game-changer · beacon · meticulous | — | cut |
 
-**Copula avoidance.** Restore plain `is` and `has`:
+The last row carries no count because these terms sit below the corpus threshold but are
+retained anyway: they are emitted by current models at rates the harvest predates. Treat the
+dash as "unverified", not "rare". (`harness` moved to the agent-jargon block below; it is a
+legitimate literal word that only goes bad as metaphor.)
+
+**Copula avoidance.** Restore plain `is` and `has` - judged per clause, never blind-swapped,
+since `represents` and `marks` are sometimes the accurate verb:
 `serves as` [12] · `stands as` [10] · `represents` · `marks` · `features` (meaning has) ·
 `offers` (meaning has) · `holds the distinction of` · `functions as` · `ventured into`
 
@@ -84,7 +90,7 @@ best-in-class [6] · world-class [7] · next-generation · first-of-its-kind
 
 **Abstract nouns used figuratively**
 landscape [27] · narrative [23] · journey [20] · insights [18] · paradigm [11] ·
-ecosystem · nexus · mosaic · fabric (of society) · cornerstone · pillar · catalyst
+ecosystem · mosaic · fabric (of society) · cornerstone · pillar · catalyst
 
 **Hedging adverbs.** The corpus reports these at inflated rates in model output:
 typically · often · sometimes · potentially · usually · arguably · generally ·
@@ -93,6 +99,23 @@ tend to · may · seem to · appear to
 **Padding verbs used as filler.** Say what the thing does:
 ensuring / ensures · highlights · supports · reflects · showcases · emphasizes ·
 demonstrates · illustrates (when used as a trailing gesture rather than a real verb)
+
+**Agent-culture jargon.** The metaphor register coding assistants emit about themselves. These
+are newer than most of the corpus, which is why the counts are missing; they are the "next
+tapestry" predicted by the staleness caveat at the top of this file. **Flag any figurative use
+on sight; the Tier 2 two-per-paragraph rule does not apply to this block.** Scope each ban to
+figurative use with the qualifier shown. Literal technical uses stay legal:
+
+- substrate → base, stack, or name the layer [as metaphor]
+- primitive (as a noun for "a basic thing") → building block, operation, or name it
+- vector (metaphorical: of change, of attack) → direction, way, route; keep the math/graphics sense
+- scaffolding (as metaphor) → structure, skeleton, or cut
+- harness (as metaphor for "a framework") → framework or setup; keep the literal test-harness sense
+- modality (for "kind of data") → data type, format; keep the ML term of art in ML contexts
+- orchestrate / conductor metaphors → run, coordinate, schedule
+- gold-plating (figurative) → more than the job needs
+- nexus (figurative) → hub, link, or cut
+- surface ("API surface" is fine; "on the writing surface of the problem" is not)
 
 ---
 
@@ -134,7 +157,9 @@ curated · bespoke · nuanced · resonate · unparalleled
 - at the end of the day [14]
 - the reality is · the truth is · the bottom line is
 - this begs the question
-- from X to Y (false-range opener)
+- from X to Y (false-range opener; only a tell when X and Y are not on a meaningful scale —
+  "from onboarding to payroll" inside an HR piece is real breadth, "everything from billing to
+  developer joy" is inflation. Full pattern card in `structural-patterns.md`.)
 - whether you're a [X] or a [Y] (false-breadth audience segmenting)
 
 **Unsourced authority.** Name the source or delete the claim:
@@ -147,12 +172,10 @@ several sources · some critics argue
 - the future looks bright · exciting times lie ahead
 - I hope this helps · let me know if you have any questions · feel free to reach out
 
-**Chat artifacts.** Strip on sight, no judgment call:
-Great question! · That's a great point! · Certainly! · I'd be happy to ·
-You're absolutely right! · I hope this helps! · Would you like me to... ·
-As a large language model · As of my last knowledge update ·
-While specific details are limited · [insert X here] · [Your Name] ·
-`oaicite` · `contentReference` · `turn0search0` · `grok_card`
+**Chat artifacts.** Canonical list lives in `formatting-tells.md` under paste-tells; both files
+treat these identically: strip on sight, no judgment call. The short version:
+Great question! · I hope this helps! · You're absolutely right! · Certainly! ·
+While specific details are limited · [insert X here] · `oaicite` · `turn0search0`
 
 **Corporate idiom**
 move the needle · low-hanging fruit · boil the ocean · circle back · touch base ·

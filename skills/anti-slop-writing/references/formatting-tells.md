@@ -15,8 +15,10 @@ The corpus splits on how hard to ban:
   or parentheses.
 
 **Resolution:** default to zero in anything under 500 words. In longer pieces allow at most one
-per 500 words, never clustered, never as a rhythm crutch. **Never replace an em dash with a
-hyphen.** Use a period, comma, or parentheses. Replace per occurrence, never with a blanket
+per 500 words, never clustered, never as a rhythm crutch. This is the default wherever the
+SKILL.md genre table has no dash cell of its own; genre rows and house style override it. **Never replace an em dash with a
+hyphen, en dash, or double hyphen.** Swapping one dash glyph for another trades the tell instead
+of removing it. Use a period, comma, or parentheses. Replace per occurrence, never with a blanket
 find-and-replace, because the right substitute differs by clause. A blanket sweep will produce
 sentences that are grammatical and wrong.
 
