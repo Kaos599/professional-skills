@@ -31,16 +31,19 @@ one that prevents the most damage.
 
 | Check | Result |
 |---|---|
-| Em dashes | 3 in 118 words. Budget for a blog is 1 per 500. **Fail** |
+| Em dashes | 2 in 115 words. Budget for a blog is 1 per 500. **Fail** |
 | Specificity floor | 0 numbers, 0 named tools, 0 dates in 4 paragraphs. **Fail** |
-| Sentence-length σ | 5.8. Borderline |
+| Same-length runs | all 9 sentences within 5 words of each other. **Fail** (under the 30-sentence sigma floor, runs is the check) |
+| Paragraph uniformity | 4/4 paragraphs within one sentence of each other. **Fail** |
 | Rule of three | "metrics, logs, and traces" is real; "three key pillars" framing is padding |
 | Unsourced authority | "Studies show" with no name. **Fail** |
-| Tier 1 vocabulary | crucial, vital, navigate, landscape, embark, journey, transformative, robust. **Fail** |
+| Tier 1 vocabulary | navigate, embark, transformative, robust. **Fail** |
+| Tier 2 cluster | crucial, vital, landscape, journey: 4 distinct terms across one short piece. **Fail** |
 
-Pattern families present: vocabulary, sentence-level (negative contrast ×2, participial
+Pattern families present: five - vocabulary, sentence-level (negative contrast ×2, participial
 pseudo-analysis, significance inflation), paragraph-level (temporal opener, summary-recap,
-fake-profound kicker), content-level (abstraction). **Five families. Reads as machine-written.**
+fake-profound kicker), rhythm (paragraph uniformity plus the nine-sentence run), content-level
+(abstraction). **Five families. Treat as fully generated shape for dosing.**
 
 ### Portability test
 
@@ -69,8 +72,9 @@ the actual problem. The vocabulary is a symptom.
 
 Dose: medium.
 
-- Cut 8 Tier 1 words. Each removal was a sentence rewrite, not a synonym swap.
-- Cut 3 em dashes, replaced per clause with a period, a comma, and a colon.
+- Cut 8 flagged vocabulary items (4 Tier 1, 4 Tier 2 cluster). Each removal was a sentence
+  rewrite, not a synonym swap.
+- Cut both em dashes, replaced per clause with a period and a colon.
 - Removed 2 negative contrasts, 1 temporal opener, 1 summary-recap ending, 1 fake-profound
   kicker, 1 participial tack-on.
 - Deleted the "Studies show" claim outright rather than sourcing it, because the piece did not
@@ -84,6 +88,11 @@ Dose: medium.
 
 The three-pillars framing. It is a real convention, not a padded triad, and the author's point
 depends on naming it before pushing against it.
+
+The closing four-sentence staccato ("The tracing was the part that mattered..." at 7/6/6/9
+words) trips the same-length-runs check. It stays: the parallel structure *is* the argument.
+Recorded here because Step 7 requires residuals to be reported, not hidden - an example that
+hides its own scan result would teach exactly the wrong habit.
 
 ### Needs you
 
@@ -106,11 +115,14 @@ gone. So is the writing.
 > careful analysis, we determined that token validation was occurring more frequently than
 > necessary. Implementing a caching layer resolved the issue effectively.
 
-Mechanical scan: **passes almost everything.** Zero em dashes. No Tier 1 vocabulary. No banned
-phrases. Sentence-length σ is 4.1. A word-list detector calls this clean.
+Mechanical scan: **passes almost every threshold it can measure.** Zero em dashes. No Tier 1
+vocabulary. No banned phrases. Sigma is undefined at five sentences (the rubric's volume
+floor), and the runs check fires instead - four consecutive sentences within five words of
+each other - which is uniformity you can measure. A word-list detector calls this clean.
 
 It is not clean. It is bleached. Every sentence is the same length and shape, there is no
-person in it, and the actual story has been compressed out.
+person in it, and the actual story has been compressed out. The runs check catches the shape;
+only Step 6 explains why the text is still dead.
 
 ### After (restored, working from the author's earlier draft and notes)
 
@@ -224,13 +236,14 @@ No rewrite.
 >
 > | Check | Count | Threshold |
 > |---|---|---|
-> | Em dashes | 3 in 118 words | 1 per 500 |
+> | Em dashes | 2 in 115 words | 1 per 500 |
 > | Paragraphs with no number, name, or date | 4 of 4 | 0 |
 > | Unsourced authority | 1 | 0 |
-> | Tier 1 vocabulary | 8 | 0 |
+> | Tier 1 vocabulary | 4 (navigate, embark, transformative, robust) | 0 |
+> | Tier 2 cluster | 4 distinct terms (crucial, vital, landscape, journey) | 2+ in one paragraph |
 >
-> Five pattern families co-occurring. On the cluster scale in `detection-rubric.md` that reads
-> as machine-written.
+> Five pattern families co-occurring. On the cluster scale in `detection-rubric.md` that is the
+> fully generated band: a heavy pass would be justified, with the author's opt-in.
 >
 > ## The underlying problem
 >
@@ -247,3 +260,57 @@ No rewrite.
 
 Note what audit mode does **not** do: assign a probability, guess at authorship, or rewrite
 anything. It names patterns the author can check, points at the root cause, and offers.
+
+---
+
+## Example 5: agent-jargon draft, medium dose
+
+A newer slop register than Example 1: technically accurate words used as metaphor decoration,
+the way current models describe their own domain.
+
+### Before
+
+> Modern agents operate on a substrate of tools that acts as a primitive for reasoning. The
+> orchestration layer serves as the conductor of an ecosystem where each harness unlocks a
+> modality. Complaints become fixes within days, because the feedback loop is the true vector
+> of progress.
+>
+> In conclusion, scaffolding the right primitives today paves the way for the agentic future.
+
+Mechanical scan: zero em dashes; Tier 1 fires only on `unlock` and the copula dodge `serves
+as`; the agent-jargon block terms (`substrate`, `harness`, `orchestration`) each fire on
+sight under their own rule. A word-list detector built for 2024 calls this clean.
+
+Pattern families present: vocabulary (`banned-vocabulary.md` agent-jargon block), sentence-level
+(copula avoidance, false agency), content-level (abstraction where a fact belongs). Three
+families co-occurring with zero facts anywhere.
+
+The cluster scale reads this as a light pass, and on vocabulary alone it would be. Medium was
+chosen because the content-level failure dominates: every sentence fails the portability test,
+so the rewrite is driven by Step 5, not by the word list.
+
+### After (working from what the author actually had)
+
+> Agents call tools through one interface; every capability we added last quarter went through
+> it. The scheduler runs them in dependency order and retries the flaky ones twice.
+>
+> When something breaks, whoever is on call sees it in the same Slack channel as the report and
+> usually ships the fix the same day.
+
+### What changed
+
+Dose: medium.
+
+- Rewrote each metaphor noun into the concrete thing it stood for: substrate/primitive → the
+  tool interface; orchestration/conductor → the scheduler; harness/modality → capabilities;
+  vector of progress → deleted (false agency plus inflation).
+- Fixed the false agency: "complaints become fixes" now names who fixes things.
+- Deleted the recap ending and the "agentic future" kicker outright.
+- Every surviving sentence names a mechanism or a number. The portability test now fails on
+  all of them, which is the point.
+
+### Needs you
+
+None invented; the specifics came from the author's notes about the scheduler and the on-call
+rotation. Without those notes, the correct output keeps the questions in `Needs you` rather
+than filling them.
