@@ -22,6 +22,13 @@ what it is not.
 Keep the shape only when the reader genuinely holds the misconception and correcting it is the
 point. Never invent a strawman to knock down. Use it once in a piece, never as the skeleton.
 
+The family has a positive-framed variant that reads as friendly and is just as formulaic:
+
+✗ "It's not just X, it's Y." · "not only X but also Y"
+✗ "Observability isn't just about logs, it's about understanding."
+✗ "This matters not just today but for years to come."
+✓ State Y, drop the negation: "Understanding matters more than collection."
+
 ### Negative listing
 
 ✗ "Not a framework. Not a library. A runtime."
@@ -75,7 +82,33 @@ or ask the author. Never invent a source.
 ### Hedge stacking
 
 ✗ "While this may vary, generally speaking, in most cases, it's worth noting that..."
-✓ One hedge maximum, and only where the claim genuinely needs it.
+✓ Collapse the stack to one hedge. Never to zero: if the claim genuinely needs qualification,
+  one hedge stays.
+
+The hedge rules elsewhere in this skill reconcile like this: stacked filler hedges collapse
+(here), honest uncertainty hedges are protected no matter how they read (hard rules,
+`preserving-voice.md` §2), and the 5% density cap in `detection-rubric.md` applies to filler
+hedges, not meaning-bearing ones. The test is whether the hedge carries information the author
+believed. "I don't know why this works" is evidence; "it may potentially perhaps be argued" is
+padding.
+
+### Hedging disguised as reassurance
+
+Permission and shrugs inserted where a conclusion should be.
+
+✗ "And that's okay." · "That's fine." (after every problem statement)
+✗ "Not always. Not perfectly."
+✓ Either take the position or leave the complication standing without absolving it.
+
+### False agency
+
+Inanimate abstractions doing human verbs, which conveniently removes the human who is
+responsible.
+
+✗ "A complaint becomes a fix within days." · "the data tells us" · "the market rewards clarity"
+✓ Name the actor: "The on-call engineer fixes complaints within days." If no specific person or
+team fits, address the reader: "you will ship faster". The pattern exists because it launders a
+claim into a law of nature; restoring the actor restores both accountability and credibility.
 
 ### False balance
 
@@ -112,6 +145,13 @@ supply the number.
 "Here's the thing," "Let me be clear," "I'll be honest," "The uncomfortable truth is."
 Cut and state the point. Keep a personal aside when it creates real context, tension, or
 character.
+
+Generalizes beyond the list: any "here's what/this/that [noun]" construction is throat-clearing
+before the point. Cut it and state the point.
+
+The casual-register variants count too: "One thing that bit me:", "Real talk:", "Okay so."
+Remove the announcement, not just its formal tone; the formal and the folksy version are the
+same tell in different clothes.
 
 ### Faux-insight setups
 
@@ -164,6 +204,34 @@ reader was just there. End on the last concrete point, takeaway, or next action.
 The closing metaphor, aphorism, or mic-drop line. Delete it. Do not rewrite it into a better
 metaphor and do not preserve the rhythm. End on the clearest concrete sentence already in the
 draft. If it needs closure, add a plain takeaway.
+
+The test that catches the whole species: if a line sounds like a pull-quote, rewrite it.
+Writing engineered to be quotable is writing engineered to be pasted, and readers can tell.
+
+### Leftover drafting artifacts
+
+Reasoning scaffolding that survived into the final text because the model argued with itself
+on the way to the draft and shipped both sides.
+
+**Answering objections no one raised:**
+✗ "This isn't mainly about cost." · "I'm not saying you should rewrite everything."
+✓ If the objection is real in the reader's mind, address it directly. If it is not, the
+  sentence is defending against an interlocutor who does not exist. Cut it.
+
+**Rejecting fake alternatives:**
+✗ "A tempting option would be to cache everything, but that has drawbacks."
+✓ Either explain why caching is wrong for this case with specifics, or don't bring it up. The
+  "tempting option" was never on the table; the sentence only performs deliberation.
+
+### Vague declaratives
+
+Sentences that announce importance, depth, or structure without showing any of it.
+
+✗ "The reasons are structural." · "The implications are significant." · "The stakes are high."
+✓ Name the specific reason, implication, or stake, or cut the sentence.
+
+Generalizes: if a sentence says something is important, deep, or structural without showing the
+thing, cut it or replace it with the specific thing.
 
 ### Formulaic challenges and outlook sections
 
@@ -256,6 +324,17 @@ firmware pushes. The specific name is stronger.
 ### Temporal vagueness
 
 "in recent years", "recently" with no date.
+
+### False ranges
+
+"From X to Y" where X and Y are not on any meaningful scale between them.
+
+✗ "We handle everything from billing to developer experience."
+✓ List the actual scope, or pick the two ends that matter and say why they are the ends.
+
+Real ranges survive the check: "from 40 minutes to 4" has numbers on a scale; "from startups to
+enterprises" is at least a size axis. The tell is breadth inflation: a range that exists to make
+the subject look comprehensive rather than to locate anything.
 
 ### Generic examples
 
