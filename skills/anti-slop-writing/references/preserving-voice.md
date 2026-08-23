@@ -130,6 +130,19 @@ description.
 
 ---
 
+## A writing sample overrides this skill's defaults
+
+If the author gave you a sample of their own writing, it is evidence about their habits, and
+evidence beats rules. The full precedence chain lives in SKILL.md (house style > sample >
+genre table > this skill's defaults); the practical consequence here: read the sample first
+and note sentence length, word choice, paragraph openings, punctuation habits, repeated
+phrases. Then match those habits even where they trip a rule in this skill. A writer who uses
+em dashes keeps them at roughly their own rate; do not apply the dash budget as a ban. A
+writer who starts paragraphs with "So" keeps doing that. The only things a sample cannot
+override are the hard rules - no invented facts, no claim changes, no authorship verdicts.
+
+---
+
 ## Genre tracks harder than authorship
 
 An important correction to the naive framing. Brandur Leach is independent but writes in

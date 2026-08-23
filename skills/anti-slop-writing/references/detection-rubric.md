@@ -14,12 +14,28 @@ Score by co-occurrence:
 |---|---|
 | 0 to 1 | Clean. Do not flag. |
 | 2 to 3 | Worth a light pass. Mention, do not alarm. |
-| 4 to 6 | Reads as machine-assisted. Recommend a de-slop pass. |
-| 7+ | Reads as machine-written. |
+| 4 to 6 | Machine-assisted shape. Recommend a de-slop pass. |
+| 7+ | Fully generated shape. Recommend the highest justified pass; heavy stays opt-in. In AUDIT mode, report this as a recommendation only. |
 
-"Pattern families" means the categories in `structural-patterns.md` (sentence-level,
-paragraph-level, rhythm, content-level) plus vocabulary and formatting. Six instances of the
-same tell is one family, not six.
+The bands calibrate edits, or recommendations when no edit is being made. They are never an
+authorship verdict; the hard rule against verdicts stands at every band.
+
+"Pattern families" is a closed set of exactly seven:
+
+1. **sentence-level** - copula avoidance, false agency, negative contrast, participial tacks, and their kin in `structural-patterns.md`
+2. **paragraph-level** - openers, uniformity, recap endings, rule-of-three, phrase repetition, false ranges
+3. **rhythm** - sentence-length spread, same-length runs, transition cadence
+4. **content-level** - abstraction, unsourced authority, portability failures
+5. **vocabulary** - any tier of `banned-vocabulary.md`, including agent jargon
+6. **formatting** - dashes, emoji headings, paste-tells, everything in `formatting-tells.md`
+7. **code-layer** - findings from `code-slop.md`
+
+Six instances of the same tell is one family, not six. Mechanical checks map to families like
+this: em dashes to formatting; sigma, runs, opener repetition, and paragraph-opening transitions
+to rhythm; rule-of-three, paragraph uniformity, and phrase repetition to paragraph-level;
+passive concentration to sentence-level; formal transitions, hedging density, and both vocabulary
+tiers to vocabulary; unsourced authority to content-level. The scanner implements six of these;
+the code layer and the judgment calls stay with you.
 
 ## Mechanical checks
 
@@ -33,15 +49,50 @@ Thresholds collected from the corpus. They are heuristics, not measurements vali
 | Sentence openers | share starting The / This / It / In, per paragraph | > 50% |
 | Formal transitions | however, furthermore, moreover, additionally, consequently, therefore, nevertheless, thus | > 8 per 1,000 words |
 | Paragraph-opening transitions | share of paragraphs opening with a connective | > 50% |
-| Hedging density | arguably, tend to, generally, seem, appear, may, typically, often, potentially ÷ total words | > 5% |
-| Passive voice | passive constructions ÷ sentences | > 30% |
-| Rule-of-three | lists of exactly three, especially near-synonyms | any, if repeated |
+| Hedging density | arguably, tend to, generally, seem, appear, may (filler sense only; permission "you may export" is a manual call), typically, often, potentially ÷ total words | > 5% |
+| Passive voice | sentences containing a passive construction ÷ total sentences | > 30% with no register reason |
+| Rule-of-three | triads of exactly three; see the unified firing condition in Measurement conventions | 2+ triads, or any near-synonym triad |
 | Paragraph uniformity | most paragraphs within ±1 sentence of each other | flag |
 | Phrase repetition | any phrase repeated within 500 words | flag |
 | Specificity floor | paragraphs with no number, name, date, or measurable quantity | any paragraph describing a practice, cost, or claim |
 | Unsourced authority | "experts agree" / "studies show" / "research suggests" with no name | any |
 | Tier 1 vocabulary | see `banned-vocabulary.md` | any |
 | Tier 2 vocabulary | see `banned-vocabulary.md` | 2+ in one paragraph |
+
+Two measurement notes the table cannot carry:
+
+- **Sentence-length sigma needs volume.** Under roughly 30 sentences the statistic is noise.
+  On short texts use the same-length-runs check instead and skip sigma entirely.
+- **Passive voice has a repair path, not just a threshold.** When flagged, name the actor:
+  "queries are validated" → "the compiler validates queries". Passive is correct when the actor
+  is unknown or irrelevant, and it is standard register in scientific and experimental writing.
+  The check flags concentration, not existence.
+
+## Measurement conventions
+
+Pin these before counting, or two honest readers get different numbers from the same text:
+
+- **Sigma window.** At 150 sentences or fewer, compute over the whole text. Above that,
+  compute over the worst contiguous 100-sentence window and say which you used.
+- **Dash allowance.** `floor(words / 500)` dashes permitted in long-form genres, minimum zero.
+- **Phrase repetition.** A phrase means three or more consecutive words. It repeats when the
+  next occurrence starts within 500 words of where the first ended.
+- **Tier 2 clustering counts distinct terms**, not token frequency; two "just"s is one term
+  twice, not a cluster of two.
+- **Rule of three fires on two or more triads in a piece, or on any single triad of true
+  near-synonyms** (same grammatical role, substitutable in context). A triad of distinct
+  referents - "metrics, logs, and traces" - never counts.
+- **Markdown units.** A paragraph is a blank-line-delimited block, excluding code fences and
+  tables. List items count as separate paragraphs for opener and uniformity checks, and as
+  part of their parent block for clustering checks. An abbreviation ending in a single capital
+  letter does not terminate a sentence.
+- **Paragraph-opening connectives** are: however, furthermore, moreover, additionally,
+  consequently, therefore, nevertheless, thus, overall, ultimately, that said. Plain
+  coordinating openers ("So,", "But,", "And,") are human texture, not transitions; they never
+  count.
+- **Scan scope.** Exclude quoted examples, blockquotes presented as exhibits, and code fences
+  from every count. If a protected region contains live slop, say so under `Not flagged` with
+  the reason.
 
 ## Qualitative checks
 

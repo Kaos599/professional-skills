@@ -41,6 +41,7 @@ Two skills, each a `SKILL.md` plus a `references/` folder. They fail differently
 - Tells count in clusters, never alone. One em dash means nothing; several pattern families co-occurring is a finding.
 - No AI-vs-human probability verdicts. Detectors guess, and they are most wrong against non-native English writers.
 - Subtraction is only half the job. A dedicated step puts the person back, because a stripped draft is bleached, not finished.
+- Ships with a read-only scanner (`scripts/slop_scan.py`) so the mechanical checks run in CI, not just in a model's head.
 
 **Use when:** a draft feels generic or corporate, when polishing anything an LLM helped write, or before publishing anything.
 
@@ -60,7 +61,7 @@ Two skills, each a `SKILL.md` plus a `references/` folder. They fail differently
 2. Shape      -> format mechanics and structure archetypes
 3. Draft      -> in the signature, against the anchor
 4. Sweep      -> five editing passes, each scored 0 to 10
-5. Gate       -> anti-slop scan, hard threshold, nothing ships below 8
+5. Gate       -> anti-slop audit, hard threshold, nothing ships above the clean band
 6. Ship
 ```
 
@@ -157,7 +158,8 @@ professional-skills/
 ├── skills/
 │   ├── anti-slop-writing/
 │   │   ├── SKILL.md
-│   │   └── references/      banned vocabulary, structural patterns, rubric, worked examples
+│   │   ├── references/      banned vocabulary, structural patterns, rubric, code slop, worked examples
+│   │   └── scripts/         slop_scan.py (read-only mechanical scanner)
 │   └── technical-content-writer/
 │       ├── SKILL.md
 │       └── references/      voice protocol, playbooks, editing passes, exemplars
