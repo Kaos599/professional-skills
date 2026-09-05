@@ -75,8 +75,8 @@ If a claim cannot be made specific, tag it rather than smoothing it:
 2. **Core Strengths to Reflect:** What technical superpowers should be evident in the draft? (e.g., deep multi-agent runtime rigor, high-taste design craft, exact statutory/mathematical accuracy).
 3. **Authorial Stance:** How does the author teach? The default stance is **Quiet Production Authority & Peer-to-Peer Teaching**: respectful, encouraging, zero downplaying of other developers, zero failure-framing, first-person singular ("I"), plain English headings.
 
-### Persona Presets & Default Profile
-Check `references/personas/`. When writing for **Harsh Dayal** (or when running in Harsh's repositories), automatically load `references/personas/harsh-dayal.md` and `references/exemplars/00-harsh-dayal.md`.
+### Persona Presets & Local Author Profiles
+Check `references/personas/` in your local `.agents` or `agent` skills folder. Users can configure their own personal author profile (e.g. `references/personas/<author-name>.md`) and canonical exemplars. When invoking the skill, it automatically resolves the local author persona unless explicitly overridden.
 
 ---
 
