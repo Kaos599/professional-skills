@@ -1,7 +1,7 @@
 ---
 source:    LinkedIn
 author:    provided by user
-authored:  unspecified
+authored:  true
 format:    linkedin post
 added:     2026-08-08
 notes:     |

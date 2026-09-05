@@ -100,24 +100,33 @@ self-deprecation is actually asserting before touching it.
 
 ## Senior Technical Authority: The Quiet Expert
 
-A major failure mode of anti-slop editing is confusing "voice preservation" with **performed incompetence**.
+A major failure mode of anti-slop editing is confusing "voice preservation" with **performed incompetence** - and the opposite failure of confusing "authority protection" with **deleting earned admissions**. Both are the Third Ditch.
 
-Generic anti-slop advice tells editors to preserve self-deprecation, confusion, and admissions of failure ("I don't know what I'm doing", "demoralized : )"). If the author is a senior engineer who designs and deploys production multi-agent systems, forcing beginner apologies or faux-modesty destroys their credibility.
+The test that separates them: **genuine struggle is specific and earned; performed incompetence is generic and undefended.**
+
+- *Genuine, keep it:* "I spent two weeks blaming the database. It was the kernel." / "Sometimes I get really demoralized when debugging and it feels like I'll NEVER make progress. I have to remind myself that I've fixed a lot of bugs before, and I'll probably fix this one too :)" (Julia Evans - a senior engineer whose sincere emotional register *is* the voice). These name a mechanism, a duration, a count, a concrete failed attempt.
+- *Performed, strip it:* "I'm honestly not sure if any of this works", "demoralized : )" with nothing attached, "I don't really know what I'm doing here" preceding confident advice. A vague mood with no underlying mechanism, injected to sound humble.
+
+An incident narrative ("what broke, what I tried, what it cost") is **never** manufactured drama. It is the specificity this skill requires. Only flag struggle when it is invented theater - a heroic-suffering arc with no mechanism, no number, and no failed attempt.
+
+If the author is a senior engineer who designs and deploys production systems, forcing beginner apologies or faux-modesty destroys their credibility. Equally, do not up-rank a hobbyist writing honestly as a hobbyist into a fake senior voice - that invents authority they do not have. The defect is a **mismatch** between the author's actual experience and their claimed stance, in either direction.
 
 ### The Rules of Senior Authority:
 1. **Quiet confidence over defensive posturing:** Never sneer at "casual prompt toys" or "amateur developers." The senior engineer doesn't need to punch down; they let the domain constraints demonstrate why naive approaches don't work.
-2. **Zero dilution of technical rigor:** Teaching like a peer does NOT mean dumbing down the code or the domain. Keep the exact statutory tax sections (Section 112A, Section 50AA 65% domestic equity rule), exact protocols (MCP JSON-RPC), and exact metrics (38% benchmark overlap, 0.38% TER, ₹6,840 Cr AUM, 68.4% downside capture).
+2. **Zero dilution of technical rigor:** Teaching like a peer does NOT mean dumbing down the code or the domain. Keep the exact spec sections, protocol names, and metrics the domain requires (a statutory section, an RFC, a wire protocol, a benchmark figure) - never round them, paraphrase them out, or generalize them away.
 3. **First-person ownership ("I", not "we", not passive):** When an engineer builds something, they say: "I mounted three declarative skills," not "Declarative skills were mounted" (whitepaper slop) and not "We mounted" (fake corporate committee).
-4. **Mechanism over mood:** Explain how the DAG resolves dependencies and why T+2 settlement differs from T+4. Don't lecture on philosophy.
+4. **Mechanism over mood:** Explain how the pipeline resolves dependencies and why each stage takes the time it does. Don't lecture on philosophy.
 
 ### The Calibration Matrix
 
-| Draft Type | Beginner / Hobbyist Tone (Defect) | Arrogant Jargon Theater (Defect) | Senior Technical Authority (Harsh's Standard) |
+| Draft Type | Mismatched Voice (Defect) | Arrogant Jargon Theater (Defect) | Senior Technical Authority (the target) |
 |---|---|---|---|
 | **Opener** | "I've been playing with LLMs and wanted to see if they could fix my money." | "Most developers use LLMs as glorified autocomplete toys, but I engineered a multi-agent loop." | "Personal finance is an unforgiving test for language models. It requires strict asset location, statutory tax rules, and settlement latencies that raw chat prompts cannot solve." |
 | **UI Artifact** | "I got the bot to make a cool little webpage for me." | "Generative UI: Compiling an Interactive Real-Time HTML Cockpit." | "Generative UI: Compiling an Interactive Allocation Dashboard." |
 | **Execution** | "I sold some funds and waited a few days for the money." | "Capital Deployment Protocol across Tranche 1 and Tranche 2 Settlement DAGs." | "Settlement Timeline: Staging Redemptions Across T+2 and T+4 Clearing Cycles." |
 | **Conclusion** | "Agents are pretty cool! Hope this helps you automate stuff." | "The 4 Decoupled Primitives Every Enterprise AI Engineer Needs in 2026." | "When you put these pieces together, agents stop being novelty chatbots and become practical, transparent systems for solving day to day problems." |
+
+(The matrix uses a personal-finance example throughout for concreteness; the pattern is domain-neutral. Swap in your domain's identifiers: a latency budget instead of a settlement cycle, a spec section instead of a tax code.)
 
 ## Positive signals to protect
 

@@ -129,18 +129,17 @@ If you use one, the voice signature still wins where they conflict.
 
 ---
 
+### Non-adversarial engineering archetypes (the default)
 
-### Non-Adversarial Engineering Archetypes (Recommended)
-
-Technical content works best when domain constraints and physical limits are the primary antagonist, rather than other developers.
+Technical content works best when domain constraints and physical limits are the primary antagonist, rather than other developers. Prefer these archetypes over persuasion frameworks for technical material:
 
 | Archetype | Shape | Best for |
 |---|---|---|
-| **Domain Constraint → Architecture / DAG → Guarantees** | Name statutory/physical constraint → show execution DAG → verify outcome | Systems engineering, pipelines, financial/legal automation |
-| **Production Pattern → Personal System → Protocol Payload** | State production primitive → distill to personal project → show protocol output | Personal automation, dev tools, applied workflows |
-| **System Evolution → Constraint Encounter → Refinement** | Start with baseline system → hit hard statutory/scaling wall → show architectural fix | System post-mortems, refactoring logs |
+| **Domain Constraint → Architecture / DAG → Guarantees** | Name the physical/statutory/regulatory constraint → show the execution plan → verify the outcome | Systems engineering, pipelines, work under hard external constraints |
+| **Production Pattern → Personal System → Protocol Payload** | State a production primitive → distill it into a personal project → show the concrete output | Personal automation, dev tools, applied workflows |
+| **System Evolution → Constraint Encounter → Refinement** | Start with a baseline system → hit a hard scaling or compliance wall → show the architectural fix | System post-mortems, refactoring logs |
 
-> **STRICT BAN:** Marketing persuasion frameworks (PAS, BAB, AIDA) are strictly banned for technical writing. They manufacture artificial pain points and downplaying that technical readers filter out on sight. Always use an engineering archetype.
+The persuasion frameworks below remain documented for the rare piece that genuinely sells something; for technical material, start with the archetypes above.
 
 ## Hooks
 
@@ -151,6 +150,9 @@ also be **true and checkable**.
   fast the model runs."
 - **The specific number.** "We cut p99 auth latency from 500ms to 45ms by not checking tokens."
 - **The concrete artifact.** "This is what 3,982 commits in 14 days looks like."
+- **The correction.** "Most people size GPUs by VRAM. That measures the wrong thing."
+  (Correcting a factual misconception is a legitimate hook. Contempt for people - "most
+  developers use toys" - is not; the anti-slop gate bans the sneer, not the correction.)
 - **The physical / domain constraint.** "Decode is bottlenecked on memory bandwidth, not raw compute: every step re-reads the weights."
 - **The unexpected specificity.** "The meeting that changed the architecture lasted 4 minutes."
 

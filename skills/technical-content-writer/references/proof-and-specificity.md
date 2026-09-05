@@ -1,7 +1,7 @@
 # Proof and specificity
 
 The mechanics that separate technical writing from technical-sounding writing. This is the
-material behind sweeps 3 and 4.
+material behind the Prove it (3) and Specificity (4) sweeps.
 
 ## Why this carries the most weight
 
