@@ -141,7 +141,7 @@ only Step 6 explains why the text is still dead.
 
 ### What changed
 
-Dose: restore.
+Dose: medium (restore).
 
 - Put back the first person and the actual sequence of events.
 - Put back the admission ("I spent two weeks blaming the database", "partly avoidable"). This is

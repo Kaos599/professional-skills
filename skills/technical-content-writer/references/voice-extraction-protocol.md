@@ -1,11 +1,11 @@
 # Voice extraction protocol
 
-Derive an operational voice signature from real samples. Run this at Step 1 of every piece.
-Re-derive each time. Do not carry a signature from memory across sessions, because the
-exemplar set changes and a stale signature is worse than none.
+Derive an operational voice signature from real samples. Run this at the Calibrate step (Step 2)
+of every piece. Re-derive each time. Do not carry a signature from memory across sessions,
+because the exemplar set changes and a stale signature is worse than none.
 
-The output is a spec you will check the draft against in Step 4. Keep it short enough to hold
-in working context. This is not literary criticism.
+The output is a spec you will check the draft against in the Sweep step (Step 5). Keep it short
+enough to hold in working context. This is not literary criticism.
 
 ## Source priority
 
@@ -131,7 +131,7 @@ wrong in every measurable way.
 7. Walk the never-do list item by item.
 
 Then the final test: **would the author recognise this as their own?** If it is competent but
-generic, the signature was applied as decoration rather than structure. Go back to Step 3.
+generic, the signature was applied as decoration rather than structure. Go back to drafting.
 
 ## Privacy
 

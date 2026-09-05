@@ -126,12 +126,11 @@ Do not flag automatically. Flag only if the surrounding text is already scoring 
 dive / deep dive [22] · actionable [13] · align / alignment [10] · optimize · scalable ·
 curated · bespoke · nuanced · resonate · unparalleled
 
----
-
-
----
-
 ## Tier 4: Jargon theater & inflated metaphors (Replace on sight)
+
+> **Provenance note:** unlike Tiers 1-3, this tier is an editorial policy tier, not
+> corpus-derived - it encodes a deliberate voice rule about inflated metaphors, with no `[n]`
+> counts. Treat it the same way in practice (replace on sight), but know where it came from.
 
 Inflating software UI, scripts, or personal automation into aerospace, military, or Wall Street instruments.
 
@@ -216,9 +215,7 @@ independently verified here.** Treat as directional, not as measurements.
 - `comprehensive` 24.5x · `nuanced` 17x · `fundamentally` 17x · `paradigm` 15.1x ·
   `typically` 9.6x · `often` 4.9x
 
-- most developers use X as toys / glorified autocomplete (downplaying others)
-- unlike casual prompt toys / wrapper scripts (elitist posturing)
-- why standard prompts break down / fail (failure-framing)
-- the difference between toy prompts and production runtimes (condescending framing)
-- whether you are building enterprise clusters or personal scripts (grandiose posturing)
-- the N primitives every AI engineer needs (arrogant universalizing)
+**Authorial-stance phrases.** The following stance-level phrases are pattern cards, not single
+words; they belong to `structural-patterns.md` (downplaying others, failure framing, jargon
+theater, grandiose posturing). They are listed there with rewrites - do not treat them as
+vocabulary substitutions.
