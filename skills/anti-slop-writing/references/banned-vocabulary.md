@@ -128,6 +128,22 @@ curated · bespoke · nuanced · resonate · unparalleled
 
 ---
 
+
+---
+
+## Tier 4: Jargon theater & inflated metaphors (Replace on sight)
+
+Inflating software UI, scripts, or personal automation into aerospace, military, or Wall Street instruments.
+
+| Word / Phrase | Why it's theater | Use instead |
+|---|---|---|
+| cockpit / telemetry cockpit | An HTML/SVG interface is not an F-16 | dashboard, interface, view |
+| tranches / tranche 1, 2 | Redeeming mutual funds is not a CDO | phases, clearing stages, timeline |
+| accretion rot / accretion drift | Unchecked portfolio accumulation is not astrophysics | accumulated clutter, fragmented holdings |
+| orchestration harness | A script or CLI `/goal` loop is not a NASA gantry | agent loop, automated workflow, script |
+| capital orchestration protocol | Transferring savings into funds is not Goldman Sachs | rebalancing plan, deployment schedule |
+| war room / mission control | Over-dramatizing an incident or terminal run | debug session, terminal logs |
+
 ## Banned phrases
 
 `[n]` = ban-context document frequency out of 100.
@@ -199,3 +215,10 @@ independently verified here.** Treat as directional, not as measurements.
 - `gain a comprehensive understanding`: reported 120x
 - `comprehensive` 24.5x · `nuanced` 17x · `fundamentally` 17x · `paradigm` 15.1x ·
   `typically` 9.6x · `often` 4.9x
+
+- most developers use X as toys / glorified autocomplete (downplaying others)
+- unlike casual prompt toys / wrapper scripts (elitist posturing)
+- why standard prompts break down / fail (failure-framing)
+- the difference between toy prompts and production runtimes (condescending framing)
+- whether you are building enterprise clusters or personal scripts (grandiose posturing)
+- the N primitives every AI engineer needs (arrogant universalizing)

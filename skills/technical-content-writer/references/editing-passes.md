@@ -1,126 +1,86 @@
 # Editing passes
 
-Five sweeps, each over the whole piece, in this order. Score each 0 to 10. Below 8, fix and
+Six sweeps, each over the whole piece, in this order. Score each 0 to 10. Below 8, fix and
 re-run that pass before moving on. Do not proceed on a 7.
 
 Order matters. Specificity edits are wasted on a claim that "so what" would have cut.
 
 ---
 
-## 1. Clarity
+## 1. Clarity & Plain English Headings
 
-Can a competent reader outside your team follow this without rereading?
+Can a competent reader follow this without stumbling?
 
-- One idea per paragraph. Three to five sentences maximum, fewer for social.
+- One idea per paragraph. Two to four sentences maximum, fewer for social.
 - Untangle sentences that are genuinely hard to follow. Do not flatten cadence that is merely
   distinctive.
+- **Plain English Headings:** Purge jargon theater. Use "dashboard" (not "cockpit"), "clearing timeline" (not "tranches"), and plain operational terms.
 - Every term defined the first time, then used. No jargon without a definition, no definition
   without subsequent use.
-- No invented abbreviations. Use only ones already in circulation.
 - One name for one thing. Do not rename a concept mid-piece for variety.
-- Unambiguous pronouns. "It", "they", and "this" need clear antecedents.
-- Active voice by default. Passive is fine when the actor is genuinely unknown or unimportant.
-- Verbs do the work. "Decided", not "made a decision."
-- Put related information together rather than scattering explanations of the same idea.
+- Active voice by default.
 
-**Score 10:** a reader two steps removed from the subject follows it start to finish.
-**Score 5:** they follow it but reread twice.
+**Score 10:** a reader follows it start to finish and all headings are plain, honest English.
 
 ---
 
-## 2. So what
+## 2. Problem Framing (Zero Failure-Framing)
 
-Read each claim and literally ask "so what?"
+Is the piece framed around the inherent difficulty of the domain rather than others failing?
 
-- No answer means cut it.
-- A weak answer means it is context, not payload. Demote it or compress it.
-- If the whole piece has no answer, go back to Step 0. The anchor was never there.
-- Does the reader end up able to *do* something differently? Name the thing.
+- Walk every heading and transitional sentence. 
+- Eliminate failure-framing: "Why X breaks down", "Why casual prompting falls short", "The failure modes of...".
+- Reframe as domain explanations: "The Real Challenges of Automating Finances", "Statutory Constraints That Shape the Pipeline".
+- Are domain limits (statutory laws, memory bandwidth, latency budgets) presented as the primary constraint?
 
-Also check: does the piece take a position, or does it survey positions and close by observing
-what the analysis "raises"? The second is the generated default. Take the position.
-
-**Score 10:** every paragraph earns its place and the reader can act on the whole.
+**Score 10:** the piece explains the problem clearly with zero failure-framing.
 
 ---
 
-## 3. Prove it
+## 3. Authority & Stance (Zero Downplaying)
 
-Every material claim maps to a number, a mechanism, a named source, or an observed outcome.
+Does the piece reflect the author's true production seniority while maintaining quiet peer-to-peer respect?
+
+- **Author Authority Check:** If the author is an experienced engineer, do they sound like one? Strip any accidental beginner apologies or performed incompetence ("I don't know what I'm doing").
+- **Zero Downplaying:** Delete all sneers at "most developers", "prompt toys", or "amateurs".
+- **Grounded Everyday Utility:** Does the piece end on real, practical day-to-day systems? Cut any grandiose posturing about "enterprise infrastructure".
+- **First-Person Ownership:** Use clear, grounded first-person singular ("I built", "I architected"). Never hide behind the royal "we" or passive third-person.
+
+**Score 10:** author sounds like a confident senior builder teaching peers with quiet respect.
+
+---
+
+## 4. Rigor & Proof
+
+Every material claim maps to a number, a statutory section, a protocol, or an observed outcome.
 
 - Walk each claim. Tag anything unsupported as `[NO-PROOF]`.
-- Replace vague attribution with a named source, or delete the claim. "Experts agree",
-  "studies show", "industry reports suggest" all fail this pass.
-- **Never invent a source, benchmark, number, or quote to satisfy this pass.** Convert to
-  `[PLACEHOLDER: what is needed]` and surface it to the user.
-- Verify anything checkable: file paths, function names, config keys, CLI flags, package names,
-  version numbers, cited URLs. Generated drafts invent these confidently.
-- Adjectives get replaced by proof. "Powerful analytics" becomes "shows which pages kill
-  signups." "Robust" becomes the property you actually mean.
+- Keep statutory tax sections (Section 112A, Section 50AA 65% domestic equity rule), protocols (MCP JSON-RPC), and exact numbers (38% overlap, 0.38% TER, ₹6,840 Cr AUM, 68.4% downside capture, T+2 vs T+4 clearing) completely intact.
+- Replace vague claims with verified metrics.
 - Named tradeoffs, including what the reader gives up. Anything presented as free is suspect.
-- Honest hedging stays. Do not delete a real qualification to sound more authoritative.
 
-**Score 10:** a hostile reader with domain knowledge could check every claim and find nothing
-overstated.
+**Score 10:** every claim is checkable, with exact statutory codes and metrics intact.
 
 ---
 
-## 4. Specificity
+## 5. Specificity & Cadence
 
-Run the portability test on every sentence: swap the company, product, hardware, and person.
-If the sentence survives unchanged, it is filler.
+Run the portability test and verify reading rhythm.
 
-- Replace generic claims with names, numbers, dates, versions, and mechanisms.
-- Name the identifier, not the category. Not "the memory bottleneck" but the actual bandwidth
-  figure. Not "a large context" but the token count.
-- Vague time ("quickly", "soon"), vague quantity ("many", "several"), and vague outcome
-  ("better performance", "saves time") all get replaced or cut.
-- Floor: every paragraph describing a practice, cost, or constraint carries at least one
-  number, named thing, or measurable quantity. Roughly one per 200 words.
-- Content that cannot be made specific is probably filler. Cut it rather than tagging it.
+- **Portability Test:** Swap the company, product, and hardware. Anything that survives unchanged is filler.
+- **Narrative Rhythm:** Paragraphs are 2–4 sentences long with natural momentum.
+- **Zero Bullet Dumps:** Restrict bullet points strictly to discrete sets (e.g. the 3 runtime skills, the 5 allocation categories, the 2 settlement phases). If bullets contain multi-paragraph explanations, convert them to narrative prose.
 
-Before and after, from the corpus:
-
-```
-"Saves time"           → "Cuts weekly reporting from 4 hours to 15 minutes"
-"Used by many teams"   → "Used by 4,200 teams across 60 countries"
-"Improved efficiency"  → "Cut deploy time from 40 minutes to 4"
-"A skilled technician" → "The repair takes five minutes and needs no soldering"
-```
-
-**Score 10:** no sentence in the piece could appear unchanged in someone else's post.
+**Score 10:** high signal-to-noise ratio, light flow, and natural cadence.
 
 ---
 
-## 5. Voice
+## 6. Voice & Holistic Balance
 
-Read against the `VOICE SIGNATURE` from Step 1, **dimension by dimension**. An overall
-impression check passes drafts that are wrong in every measurable way.
+Read against the Author Persona and Voice Signature.
 
-- [ ] Mean sentence length within ±2 words of the signature
-- [ ] Sentence-length spread matches; no run of 3+ sentences within 5 words of each other
-- [ ] Paragraph lengths vary as the signature does
-- [ ] Capitalisation convention matches line by line
-- [ ] Parenthetical rate and usage match
-- [ ] Question frequency and kind match
-- [ ] Em dash count matches the signature, usually zero
-- [ ] Connectors drawn from the author's actual set, not rotated for variety
-- [ ] Receipts per 100 words match the signature rate
-- [ ] Opening line belongs in the collected openings set
-- [ ] Closing line belongs in the collected closings set
-- [ ] Every item on the never-do list checked individually
+- Does quiet authority coexist with accessible peer teaching?
+- Is technical rigor preserved without academic whitepaper slop?
+- Does the author sound like themselves?
 
-Then read it aloud. Rhythm problems are audible where they are invisible on screen.
-
-Final question: **would the author recognise this as their own writing?** Competent but generic
-means the signature was applied as decoration rather than structure. Go back to drafting.
-
-**Score 10:** it is indistinguishable from the exemplars on every measured dimension.
-
----
-
-## After the sweeps
-
-Proceed to the Step 5 gate in `SKILL.md`. The gate runs the `anti-slop-writing` skill and has a
-hard threshold. The sweeps are not a substitute for it. They check whether the piece is good,
-the gate checks whether it reads as machine-written. Those are different failures.
+**Score 10:** satisfies all 11 rules simultaneously in holistic balance.

@@ -129,6 +129,19 @@ If you use one, the voice signature still wins where they conflict.
 
 ---
 
+
+### Non-Adversarial Engineering Archetypes (Recommended)
+
+Technical content works best when domain constraints and physical limits are the primary antagonist, rather than other developers.
+
+| Archetype | Shape | Best for |
+|---|---|---|
+| **Domain Constraint → Architecture / DAG → Guarantees** | Name statutory/physical constraint → show execution DAG → verify outcome | Systems engineering, pipelines, financial/legal automation |
+| **Production Pattern → Personal System → Protocol Payload** | State production primitive → distill to personal project → show protocol output | Personal automation, dev tools, applied workflows |
+| **System Evolution → Constraint Encounter → Refinement** | Start with baseline system → hit hard statutory/scaling wall → show architectural fix | System post-mortems, refactoring logs |
+
+> **STRICT BAN:** Marketing persuasion frameworks (PAS, BAB, AIDA) are strictly banned for technical writing. They manufacture artificial pain points and downplaying that technical readers filter out on sight. Always use an engineering archetype.
+
 ## Hooks
 
 Techniques the corpus endorses, with the constraint that in technical writing the hook must
@@ -138,7 +151,7 @@ also be **true and checkable**.
   fast the model runs."
 - **The specific number.** "We cut p99 auth latency from 500ms to 45ms by not checking tokens."
 - **The concrete artifact.** "This is what 3,982 commits in 14 days looks like."
-- **The correction.** "Most people size GPUs by VRAM. That measures the wrong thing."
+- **The physical / domain constraint.** "Decode is bottlenecked on memory bandwidth, not raw compute: every step re-reads the weights."
 - **The unexpected specificity.** "The meeting that changed the architecture lasted 4 minutes."
 
 Banned as openers, by heavy corpus consensus and by the anti-slop gate:

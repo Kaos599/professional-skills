@@ -97,6 +97,28 @@ self-deprecation is actually asserting before touching it.
 
 ---
 
+
+## Senior Technical Authority: The Quiet Expert
+
+A major failure mode of anti-slop editing is confusing "voice preservation" with **performed incompetence**.
+
+Generic anti-slop advice tells editors to preserve self-deprecation, confusion, and admissions of failure ("I don't know what I'm doing", "demoralized : )"). If the author is a senior engineer who designs and deploys production multi-agent systems, forcing beginner apologies or faux-modesty destroys their credibility.
+
+### The Rules of Senior Authority:
+1. **Quiet confidence over defensive posturing:** Never sneer at "casual prompt toys" or "amateur developers." The senior engineer doesn't need to punch down; they let the domain constraints demonstrate why naive approaches don't work.
+2. **Zero dilution of technical rigor:** Teaching like a peer does NOT mean dumbing down the code or the domain. Keep the exact statutory tax sections (Section 112A, Section 50AA 65% domestic equity rule), exact protocols (MCP JSON-RPC), and exact metrics (38% benchmark overlap, 0.38% TER, ₹6,840 Cr AUM, 68.4% downside capture).
+3. **First-person ownership ("I", not "we", not passive):** When an engineer builds something, they say: "I mounted three declarative skills," not "Declarative skills were mounted" (whitepaper slop) and not "We mounted" (fake corporate committee).
+4. **Mechanism over mood:** Explain how the DAG resolves dependencies and why T+2 settlement differs from T+4. Don't lecture on philosophy.
+
+### The Calibration Matrix
+
+| Draft Type | Beginner / Hobbyist Tone (Defect) | Arrogant Jargon Theater (Defect) | Senior Technical Authority (Harsh's Standard) |
+|---|---|---|---|
+| **Opener** | "I've been playing with LLMs and wanted to see if they could fix my money." | "Most developers use LLMs as glorified autocomplete toys, but I engineered a multi-agent loop." | "Personal finance is an unforgiving test for language models. It requires strict asset location, statutory tax rules, and settlement latencies that raw chat prompts cannot solve." |
+| **UI Artifact** | "I got the bot to make a cool little webpage for me." | "Generative UI: Compiling an Interactive Real-Time HTML Cockpit." | "Generative UI: Compiling an Interactive Allocation Dashboard." |
+| **Execution** | "I sold some funds and waited a few days for the money." | "Capital Deployment Protocol across Tranche 1 and Tranche 2 Settlement DAGs." | "Settlement Timeline: Staging Redemptions Across T+2 and T+4 Clearing Cycles." |
+| **Conclusion** | "Agents are pretty cool! Hope this helps you automate stuff." | "The 4 Decoupled Primitives Every Enterprise AI Engineer Needs in 2026." | "When you put these pieces together, agents stop being novelty chatbots and become practical, transparent systems for solving day to day problems." |
+
 ## Positive signals to protect
 
 Present in the strongest writing surveyed. Hard to fake, easy to delete.
