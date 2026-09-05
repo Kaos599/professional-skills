@@ -138,6 +138,54 @@ supply the number.
 
 ---
 
+
+### Downplaying others (the elitist setup)
+
+Setting up the author's solution by sneering at how other developers or users work.
+
+✗ "Most developers use LLMs as glorified autocomplete or single-turn conversational toys. When they try to automate complex tasks, they fail."
+✓ "Personal finance is an unforgiving test for language models. It requires strict asset location constraints, statutory tax rules, and settlement latencies that cannot be solved by pasting statements into a raw chat prompt."
+
+True confidence is quiet. Frame the difficulty around the **domain constraints**, never around the alleged incompetence of other engineers.
+
+### Failure-framing in headings and sections
+
+Titling sections or framing arguments around others "failing", "breaking down", or "falling short".
+
+✗ "Why Standard Prompts Break Down"
+✗ "The Failure Modes of Base Models"
+✓ "The Real Challenges of Automating Finances"
+✓ "Statutory Constraints That Break Naive Automation"
+
+Explain the problem and the technical constraint. Do not revel in failure.
+
+### Jargon theater & metaphorical scale
+
+Dressing up everyday engineering, UI artifacts, or personal workflows in high-finance or aerospace jargon.
+
+✗ "Generative UI: Compiling an Interactive HTML Cockpit"
+✓ "Compiling an Interactive Dashboard"
+✗ "Tranche 1 (Domestic Equity - T+2 Days)... Tranche 2 (Overseas FoFs - T+4 Days)"
+✓ "Phase 1: Domestic Equity (T+2 clearing)... Phase 2: Overseas FoFs (T+4 clearing)"
+
+### Grand enterprise posturing
+
+Inflating a personal automation build into an unsolicited lecture for "every enterprise AI engineer".
+
+✗ "The 4 Agent Primitives Every AI Engineer Needs: Whether you are building mission-critical enterprise systems..."
+✓ "When you put these pieces together, agents stop being novelty chatbots and become practical, transparent systems for solving day to day problems."
+
+End on grounded, practical utility, not boardroom posturing.
+
+### Academic whitepaper slop (disembodiment)
+
+Retreating into detached 3rd-person passive or the royal "we" to sound authoritative, scrubbing out the individual engineer.
+
+✗ "An evaluation of candidate schemes was conducted. Table 1 illustrates the resulting metrics."
+✓ "I evaluated four flexicap contenders against the Nifty 50 TRI."
+
+If an individual engineer built the system, use clear, grounded first-person singular ("I"). Never hide behind an anonymous committee.
+
 ## Paragraph and section level
 
 ### Throat-clearing openers

@@ -27,9 +27,17 @@ Four consequences that govern everything below:
 2. **Tells are diagnostic in clusters, not alone.** One em dash means nothing. Em dashes plus a
    rule-of-three plus an "In conclusion" section plus uniform paragraph lengths is a confession.
    Never flag a single occurrence as evidence.
-3. **The failure mode is over-correction.** Stripping every flagged token turns distinctive
-   human writing into flat, cautious prose. That is a different kind of slop, and it is the one
-   this skill is most likely to cause. Deleting is easy; the hard half is Step 6.
+3. **The failure mode is over-correction, in three forms (The Three Ditches).**
+   - *Ditch 1 — Bleaching:* running the subtraction (Steps 1-5) and skipping Step 6 leaves flat,
+     cautious, personality-free prose. This is the one this skill is most likely to cause.
+     Deleting is easy; the hard half is Step 6.
+   - *Ditch 2 — Academic whitepaper slop:* over-correcting into a detached, passive, third-person
+     clinical register or royal "we" that reads like a committee report.
+   - *Ditch 3 — Performed incompetence:* confusing human voice with self-deprecation, confusion,
+     or beginner apologies. If the author is a senior engineer who builds production systems, do
+     NOT strip their authority or force faux-modesty. But a senior engineer's *earned, specific*
+     admissions of uncertainty are voice, not incompetence - see the test in
+     `references/preserving-voice.md` before touching them.
 4. **These heuristics are biased against non-native English speakers.** Simpler vocabulary,
    more formal connectives, and more even sentence rhythm are all normal in competent
    second-language writing, and all trip the checks below. Never tell someone their writing
@@ -132,6 +140,7 @@ Read the whole draft. Note internally, do not output:
 - The core point in one sentence. If you cannot find it, ask rather than guessing.
 - 3 to 5 **voice signals to protect**: vocabulary, cadence, bluntness, humour, digressions,
   admissions, profanity, level of polish.
+- Author authority: Is the author an experienced practitioner? Protect their authority.
 - Format, audience, and genre row from the table above.
 - Dose.
 
@@ -178,23 +187,25 @@ per occurrence. This skill's own reference files were damaged exactly this way o
 
 ### 2. Run the pattern scan
 
-`references/structural-patterns.md`. The shapes that survive model updates, each with a bad
-example and the rewrite. Highest-yield, by corpus frequency:
+`references/structural-patterns.md`. The shapes that survive model updates:
 
-- **Negative contrast.** "It's not X, it's Y". The most model-characteristic sentence shape.
-  State Y.
-- **Participial pseudo-analysis.** Trailing `-ing` clauses that pretend to interpret:
-  "highlighting the importance of", "underscoring the shift".
+- **Negative contrast.** "It's not X, it's Y". The most model-characteristic sentence shape. State Y.
+- **Participial pseudo-analysis.** Trailing `-ing` clauses that pretend to interpret: "highlighting the importance of", "underscoring the shift".
 - **Significance inflation.** "stands as a testament", "marks a pivotal moment". State the fact.
 - **Copula avoidance.** "serves as", "represents" where "is" is clearer.
 - **Throat-clearing and faux-insight openers.** "Here's the thing", "What most people get wrong".
+- **Downplaying others.** "Most developers do X, but I do Y", "unlike casual prompt toys". Cut the sneer. True authority is quiet; focus on domain constraints.
+  The line to draw: contempt for people ("most developers use toys") is slop; correcting a factual misconception ("most people size GPUs by VRAM — that measures the wrong thing") is a legitimate hook.
+- **Failure-framing in headings.** "Why X breaks down / fails". Reframe around domain constraints.
+- **Jargon theater.** Reject aerospace/finance cosplay ("cockpit", "tranches", "accretion drift"). Use plain technical English ("dashboard", "clearing timeline Phase 1/Phase 2").
 - **Summary-recap endings.** "In conclusion", or a final paragraph restating the piece.
 - **Fake-profound kickers.** The closing aphorism. Delete it, do not improve it.
 
 ### 3. Run the vocabulary scan
 
 `references/banned-vocabulary.md`. Tier 1 replaces on sight. Tier 2 flags only when 2+ appear in
-one paragraph. Tier 3 is context-dependent and often legitimate.
+one paragraph. Tier 3 is context-dependent and often legitimate. Tier 4 flags Jargon Theater on
+sight (editorial policy tier, not corpus-derived - see that file's note).
 
 **When you remove a flagged word, rewrite the sentence.** Swapping in a synonym leaves the
 machine sentence intact with different paint.
@@ -230,17 +241,21 @@ are subtraction; this is the only step that adds. A draft that has been through 
 alone is not finished, it is bleached.
 
 **Read `references/preserving-voice.md` before doing this step.** It catalogues the eight things
-an editing pass reliably destroys, with verbatim examples of what is at stake. The short version:
-an AI pass optimises for clarity, confidence, and inoffensiveness, while distinctive writing
-depends on timing, admitted uncertainty, and calculated risk. Those are in direct tension, and
-the pass will resolve the tension the wrong way unless you stop it.
+an editing pass reliably destroys, and it defines the authority test that prevents the Third
+Ditch (performed incompetence). The short version: an AI pass optimises for clarity, confidence,
+and inoffensiveness, while distinctive writing depends on timing, admitted uncertainty, and
+calculated risk.
 
-The eight, as a checklist against your own diff: pacing fragments · self-undermining hedges ·
+Walk the eight items against your own diff: pacing fragments · self-undermining hedges ·
 digressive parentheticals · named people in vulnerable disclosures · deliberate repetition ·
 unresolved endings · one-off register breaks · self-deprecation that is actually a claim.
 
 For each one you removed, answer: **was this an error, or was this the person?** If you cannot
-tell, leave it in and flag it.
+tell, leave it in and flag it. Then apply the authority test: an admission that is **specific
+and earned** (it names a mechanism, a number, or a concrete failed attempt) is voice and stays;
+an admission that is **generic and undefended** (a vague mood with nothing attached) is slop and
+goes. An incident narrative ("what broke") is never manufactured drama - it is the specificity
+this skill requires.
 
 Work from what the source supports. Never invent an anecdote, statistic, or opinion the author
 did not have.
@@ -248,15 +263,21 @@ did not have.
 - **Restore the specific.** Where you cut a vague claim, ask the author for the real number
   rather than leaving a hole. A gap is better than a lie, but the fact is better than both.
 - **Vary rhythm on meaning.** Mix 4-to-10-word sentences with 25-to-36-word ones, driven by what
-  each sentence does, not by a target statistic. Forced fragments between long sentences are
-  their own tell.
+  each sentence does, not by a target statistic. A 2-to-4-sentence paragraph is a reasonable
+  default, but deliberately break it: some paragraphs run one sentence, some five or six.
+  Uniform paragraph length is itself a flagged tell. Forced fragments between long sentences
+  are their own tell.
 - **Let paragraphs be uneven.** Some one sentence, some six. Important sections get space,
   standard sections compress, empty sections get deleted.
 - **Keep contractions.**
+- **Keep first-person ownership.** Where the author writes as an individual practitioner, keep
+  confident first-person singular ("I built", "I architected"). Never substitute the detached
+  academic third-person or the royal "we" for it - except where the register genuinely requires
+  impersonal voice (scientific, legal, formal: the genre table wins).
 - **Keep the edge.** Strong opinions, blunt language, humour, profanity, self-interruptions, and
   honest admissions, where they belong to the author.
-- **Keep the admissions.** "I got this wrong for a year", "I still don't fully understand why".
-  These are the least fakeable thing in writing and the first thing an AI pass deletes.
+- **Keep the admissions.** The specific, earned ones. These are the least fakeable thing in
+  writing and the first thing an AI pass deletes.
 - **Keep the digressions** that serve the voice even when they do not serve the argument.
 - **Let sections end without a bow.** Not everything needs a closing line.
 - **Repeat the plain word** rather than rotating synonyms.
@@ -293,6 +314,13 @@ theirs means you over-corrected. Go back to Step 6.
 - Never soften or inflate a claim. "Around 40%" stays "around 40%". "I think it might work"
   stays a maybe. Deleting an honest hedge to sound authoritative is a lie about confidence.
 - Never output a verdict on whether a human or a model wrote something.
+- Never downplay other developers or treat peers as inferior ("most developers use toys"). The
+  ban targets contempt for people, not correction of misconceptions.
+- Never frame headings around others "failing" or "breaking down"; frame around domain constraints.
+- Never strip senior technical authority or replace confident first-person singular ("I built")
+  with detached academic third-person ("the system was evaluated") or the royal "we", when the
+  author writes as an individual practitioner. In scientific, legal, and formal registers the
+  genre table wins.
 - Never replace an em dash with a hyphen, en dash, or double hyphen. Swapping one dash glyph
   for another trades the tell instead of removing it. Use a period, comma, or parentheses,
   chosen per clause.
@@ -304,8 +332,8 @@ theirs means you over-corrected. Go back to Step 6.
 Two shapes come before the template:
 
 - **Zero-change.** The scan finds nothing failing and the draft reads fine: return a short
-  verdict, optional notes under `Needs you`, and the line `No edit made.` (Example 3's shape.)
-  Never render template sections with nothing in them.
+  verdict, optional notes under `Needs you`, and the line `No edit made.` Never render template
+  sections with nothing in them.
 - **Husk draft.** If subtraction would remove more than half the draft, or every surviving
   sentence needs an author-supplied fact, do not ship the remains. Return the patterns found,
   the `Needs you` list, and stop. An emptied draft is not an edited one.
