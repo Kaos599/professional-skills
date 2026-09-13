@@ -1,6 +1,6 @@
 ---
 name: anti-slop-writing
-description: Make writing sound like a person wrote it. Rewrites drafts that read as machine-generated, restores voice that AI editing flattened, and audits text for AI tells when asked. Use when a draft feels generic or corporate, when asked to de-slop or humanize text, when polishing anything an LLM helped write, before publishing a post or doc, or when someone asks whether writing "sounds like AI". Do not use it to adjudicate authorship disputes: this skill names patterns and never outputs an AI-vs-human verdict.
+description: Make writing sound like a person wrote it. Rewrites drafts that read as machine-generated, restores voice that AI editing flattened, and audits text for AI tells when asked. Use when a draft feels generic or corporate, when asked to de-slop or humanize text, when polishing anything an LLM helped write, before publishing a post or doc, or when someone asks whether writing 'sounds like AI'. Do not use it to adjudicate authorship disputes - this skill names patterns and never outputs an AI-vs-human verdict.
 ---
 
 # Anti-Slop Writing
