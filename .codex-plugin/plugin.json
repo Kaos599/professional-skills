@@ -1,7 +1,7 @@
 {
   "name": "professional-skills",
-  "version": "1.0.0",
-  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, and technical content writing with runtime voice calibration.",
+  "version": "1.1.0",
+  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, technical content writing with runtime voice calibration, and a tech-blog-series workflow that researches, drafts, illustrates and reviews long-form technical posts.",
   "author": {
     "name": "Kaos599",
     "url": "https://github.com/Kaos599"
@@ -12,19 +12,22 @@
     "agent-skills",
     "anti-slop",
     "technical-writing",
-    "copywriting"
+    "copywriting",
+    "technical-blog",
+    "svg-figures"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Professional Skills",
-    "shortDescription": "Anti-slop editing and technical content writing skills",
-    "longDescription": "Two production-grade writing skills for AI coding agents: anti-slop-writing removes AI tells and restores human voice; technical-content-writer drafts checkable technical posts, threads, and docs in a derived voice.",
+    "shortDescription": "Anti-slop editing, technical content writing, and technical blog series",
+    "longDescription": "Three production-grade writing skills for AI coding agents: anti-slop-writing removes AI tells and restores human voice; technical-content-writer drafts checkable technical posts, threads, and docs in a derived voice; tech-blog-series takes a technical blog post or series from research to a reviewed draft with a fact ledger, hand-built SVG figures, and a review panel.",
     "developerName": "Kaos599",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Use Professional Skills to edit this draft so it sounds like a person wrote it.",
-      "Use Professional Skills to write a technical LinkedIn post about what I just shipped."
+      "Use Professional Skills to write a technical LinkedIn post about what I just shipped.",
+      "Use Professional Skills to plan and write a technical blog series about our system, with figures and a review pass."
     ]
   }
 }

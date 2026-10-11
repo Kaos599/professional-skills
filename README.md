@@ -4,7 +4,7 @@
 
 ### Agent skills for professional writing, built for **Claude Code**, **Codex**, and **skills.sh**
 
-Two production-grade skills that make anything you ship sound like a person wrote it.
+Three production-grade skills: make anything you ship sound like a person wrote it, and take a technical blog series from research to a reviewed, illustrated draft.
 
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-D97757?style=flat-square&logo=claude&logoColor=white)](https://code.claude.com)
 [![Codex Plugin](https://img.shields.io/badge/Codex-Plugin-10A37F?style=flat-square&logo=openai&logoColor=white)](https://developers.openai.com/codex)
@@ -21,7 +21,7 @@ npx skills add Kaos599/professional-skills --all
 
 ## What's inside
 
-Two skills, each a `SKILL.md` plus a `references/` folder. They fail differently and run separately; the only coupling is that the writer calls the anti-slop skill as a hard gate before anything ships.
+Three skills, each a `SKILL.md` plus a `references/` folder. The two writing skills fail differently and run separately; the writer calls the anti-slop skill as a hard gate before anything ships. `tech-blog-series` sits on top of both: it orchestrates research, drafting, figures and review for long-form technical posts, and uses the other two for voice and the anti-slop gate.
 
 <div style="border: 1px solid rgba(127,127,127,0.35); border-radius: 12px; padding: 20px 24px; margin: 16px 0; background: rgba(127,127,127,0.06);">
 
@@ -56,13 +56,14 @@ Two skills, each a `SKILL.md` plus a `references/` folder. They fail differently
 **The pipeline:**
 
 ```
-0. Anchor     -> the concrete thing, the claim, the proof, the lesson
-1. Calibrate  -> voice signature derived from exemplars at runtime
-2. Shape      -> format mechanics and structure archetypes
-3. Draft      -> in the signature, against the anchor
-4. Sweep      -> five editing passes, each scored 0 to 10
-5. Gate       -> anti-slop audit, hard threshold, nothing ships above the clean band
-6. Ship
+0. Anchor     -> the concrete thing, the domain constraint, the proof, the utility
+1. Persona    -> who the author is as an engineer, and the stance they write from
+2. Calibrate  -> voice signature derived from exemplars or a persona at runtime
+3. Shape      -> format mechanics and structure archetypes
+4. Draft      -> in the signature and persona, against the anchor
+5. Sweep      -> six editing passes, each scored 0 to 10
+6. Gate       -> anti-slop audit, hard threshold, nothing ships above the clean band
+7. Ship
 ```
 
 **Why it works:**
@@ -72,6 +73,36 @@ Two skills, each a `SKILL.md` plus a `references/` folder. They fail differently
 - Every claim carries a number or a named thing. No anchor means no piece, and inventing a number, benchmark, or quote is absolute.
 
 **Use when:** writing or rewriting any technical content for a public audience.
+
+</div>
+
+<div style="border: 1px solid rgba(127,127,127,0.35); border-radius: 12px; padding: 20px 24px; margin: 16px 0; background: rgba(127,127,127,0.06);">
+
+### `tech-blog-series`
+
+**A deep technical blog post or series, from research to reviewed draft.** Plans, researches, writes, illustrates and reviews long-form technical posts (your own practice plus industry and research context) that an engineer can check and a non-engineer can follow.
+
+**Six phases:**
+
+```
+1. Voice and references -> intake questions, voice signature, design tokens, reference anatomy
+2. Topic research       -> papers, your own evidence, industry facts, then a concept inventory
+3. Shape the series     -> agree the post split with the user before writing
+4. Standard and draft   -> series standard, fact ledger, notes, then the post
+5. Figures and preview  -> hand-built SVG figures in both themes, a private preview page
+6. Review, fix, gate    -> nemesis + 10-metric grader + 3 reader POVs, verified, fixed, gated
+```
+
+**Why it works:**
+
+- No fact row, no number. Every claim traces to a file:line or URL in `FACTS.md`, and cuts are recorded.
+- Evidence honesty is a rule, not a vibe: n under 30 is stated, CIs that include zero are said aloud, selection effects, rerun drift and confounds are named, and thresholds come from distributions, not means.
+- Human storytelling with two layers: a scene and a person in the body, mechanism and statistics in "For engineers" asides.
+- Figures from a stdlib-only SVG kit (`scripts/figure_kit.py`): one idea per figure, one accent, a reserved hazard colour, computed numbers with `--check` asserts, themable for dark and light.
+- A review panel that runs in parallel, and an orchestrator that verifies reviewers' claims against the source before relaying them.
+- Ships `check_post.py` (mechanical lint, exits 1 on hard-rule failures), `build_preview.py`, `shoot_figures.py`, templates and worked examples.
+
+**Use when:** writing a technical blog or series, turning a codebase, paper or experiment log into posts, making explanatory figures, or reviewing and grading a technical draft.
 
 </div>
 
@@ -96,7 +127,7 @@ npx skills add -g Kaos599/professional-skills --all
 
 ### Claude Code: as a plugin
 
-This repository is a valid Claude Code plugin with both skills bundled under `skills/`.
+This repository is a valid Claude Code plugin with all three skills bundled under `skills/`.
 
 ```bash
 claude plugin marketplace add Kaos599/professional-skills
@@ -133,6 +164,7 @@ Point your agent at the folder, or copy the skill folders anywhere on the standa
 ```bash
 cp -R skills/anti-slop-writing ~/.agents/skills/
 cp -R skills/technical-content-writer ~/.agents/skills/
+cp -R skills/tech-blog-series ~/.agents/skills/
 ```
 
 ---
@@ -146,6 +178,8 @@ This draft reads like AI slop. Make it sound like me.            -> anti-slop-wr
 Does this sound like it was written by a person? Be honest.      -> anti-slop-writing (audit)
 Write a LinkedIn post about the inference stack we just shipped. -> technical-content-writer
 Turn my README into a blog post that engineers will trust.       -> technical-content-writer
+Plan a 3-post series on how our ingest pipeline works.          -> tech-blog-series
+Make the figures for this post, and review it with the panel.   -> tech-blog-series
 ```
 
 ## Repository structure
@@ -160,14 +194,20 @@ professional-skills/
 │   │   ├── SKILL.md
 │   │   ├── references/      banned vocabulary, structural patterns, rubric, code slop, worked examples
 │   │   └── scripts/         slop_scan.py (read-only mechanical scanner)
-│   └── technical-content-writer/
+│   ├── technical-content-writer/
+│   │   ├── SKILL.md
+│   │   └── references/      voice protocol, playbooks, editing passes, exemplars, personas
+│   └── tech-blog-series/
 │       ├── SKILL.md
-│       └── references/      voice protocol, playbooks, editing passes, exemplars
+│       ├── references/      workflow, intake, writing standard, figure system, review panel, lessons
+│       ├── templates/       SERIES_STANDARD, FACTS, NOTES, post skeleton
+│       ├── scripts/         check_post, build_preview, shoot_figures, figure_kit (stdlib only)
+│       └── examples/        filled-in standard, fact ledger, cold opens, review report, example figures
 ├── README.md
 └── LICENSE
 ```
 
-Both skills follow the standard `SKILL.md` + `references/` Agent Skills layout, so any host (Claude Code, Codex, skills.sh, or any agent that reads `SKILL.md` files) picks them up automatically.
+All three skills follow the standard `SKILL.md` + `references/` Agent Skills layout, so any host (Claude Code, Codex, skills.sh, or any agent that reads `SKILL.md` files) picks them up automatically.
 
 ## Adding a voice to technical-content-writer
 
@@ -175,7 +215,7 @@ Drop `NN-short-slug.md` into `references/exemplars/` with the frontmatter header
 
 ## Provenance
 
-The anti-slop and writing-craft content is distilled from a harvest of **100 published skills on skills.sh** (~387,000 words across 45 anti-slop and 55 writing-craft skills), analyzed with ban-context document frequency so skills that *ban* a word are counted separately from skills that *use* it. The exemplars and house-style measurements come from a separate pass over real published technical writing, with sources cited per entry.
+The anti-slop and writing-craft content is distilled from a harvest of **100 published skills on skills.sh** (~387,000 words across 45 anti-slop and 55 writing-craft skills), analyzed with ban-context document frequency so skills that *ban* a word are counted separately from skills that *use* it. The exemplars and house-style measurements come from a separate pass over real published technical writing, with sources cited per entry. `tech-blog-series` is distilled from building a real multi-post technical series through six drafts and three review rounds; its lessons, rules and examples are generalized from that run, and its example series is invented.
 
 ---
 
