@@ -1,7 +1,7 @@
 {
   "name": "professional-skills",
-  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, and technical content writing with runtime voice calibration.",
-  "version": "1.0.0",
+  "description": "Professional writing skills for AI coding agents: anti-slop editing that makes drafts sound human, technical content writing with runtime voice calibration, and a tech-blog-series workflow that researches, drafts, illustrates and reviews long-form technical posts.",
+  "version": "1.1.0",
   "author": {
     "name": "Kaos599",
     "url": "https://github.com/Kaos599"
@@ -13,6 +13,8 @@
     "anti-slop",
     "claude-code",
     "technical-writing",
-    "copywriting"
+    "copywriting",
+    "technical-blog",
+    "svg-figures"
   ]
 }
